@@ -4,8 +4,6 @@ yarn.lock
 yarn-error.log
 
 libfribidi.dylib
-Dockerfile.client
-Dockerfile.api
 
 **/__pycache__
 .csv
