@@ -1,0 +1,80 @@
+.buttonarea {
+    padding-top: 20px;
+}
+
+.radio-button-title-text {
+    padding-bottom: 5px;
+}
+
+.FormControl {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.settings-panel-text {
+    font-size: 14pt;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.title {
+    padding: 10px;
+    display: flex;
+    align-items:center;
+}
+
+.titlelogo {
+    float: left;
+    padding-right: 20px;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+}
+
+.title-text {
+    font-size: 28pt;
+}
+
+.gap {
+    padding-bottom: 20px;
+}
+
+.child {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}  
+
+.wordcloud {
+    height: 400px;
+    width: 400px;
+}
+
+.vaniwordcloud-title {
+    height: 100px;
+    width: 100px;
+  }
+
+.button {
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 10pt;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}                

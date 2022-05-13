@@ -1,0 +1,35 @@
+{
+  "short_name": "Vaniwordcloud App",
+  "name": "Wordcloud app for Srila Prabhupada's books",
+  "icons": [
+    {
+      "src": "vanipedia.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "vanipedia.png",
+      "type": "image/png",
+      "sizes": "900x900"
+    },
+    {
+      "src": "vanipedia512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "vanipedia192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "sp-book-holding.png",
+      "type": "image/png",
+      "sizes": "413x413"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

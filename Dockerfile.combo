@@ -1,0 +1,34 @@
+# Build step #1: build the React front end
+FROM node:16-alpine as build-step
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json yarn.lock ./
+COPY ./src ./src
+COPY ./public ./public
+RUN yarn install
+RUN yarn build
+
+RUN apk update
+RUN apk upgrade
+RUN apk add bash curl git sudo 
+RUN apk add --upgrade fribidi
+
+# Build step 1.2: install fribidi (Unicode Bidirectional Algorithm) for rendering diacritics and special characters in Pillow (PIL) images - needed for Python word_cloud
+RUN ln -s /usr/local/lib/libfribidi.dylib libfribidi.dylib
+
+# Build step #2: build the flask API
+FROM python:3.9
+WORKDIR /app
+COPY --from=build-step /app/build ./build
+RUN mkdir ./api
+COPY api/requirements.txt api/api.py api/utils.py api/.flaskenv ./api
+RUN pip install -r ./api/requirements.txt
+RUN python -m nltk.downloader punkt
+ENV FLASK_ENV production
+CMD ["python", "api/api.py"]
+
+# Deploy
+EXPOSE 3000
+WORKDIR /app/api
+RUN pip install gunicorn
+CMD ["gunicorn", "-b", ":3000", "api:app"]
